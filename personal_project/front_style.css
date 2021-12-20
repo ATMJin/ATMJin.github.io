@@ -1,0 +1,350 @@
+section {
+  /* position: relative; */
+  padding: 40px 80px;
+  padding-bottom: 20px;
+}
+
+:root {
+  /* 寬100高150 */
+  --upper_petal: path('M 50,136.6 L 0,50 A 50,50 0,0,1 100,50 L 50,136.6 z');
+  --down_petal: path('M 50,0 L 0,86.6 A 50,50 0,0,0 100,86.6 L 50,0 z');
+}
+
+/* ========================================= */
+/* 以下課程介紹 */
+.introduce_of_course {
+  background-color: #84bae6;
+  position: relative;
+}
+
+.introduce_of_course>h2 {
+  margin-bottom: 40px;
+}
+
+.course_image {}
+
+.course_image_01 {
+  display: block;
+  width: 900px;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin: 0 auto;
+}
+
+/* 輪播列左右按鈕 */
+.course_image::before {
+  content: " <";
+  display: block;
+  font-size: 5.5rem;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 1%;
+  border-radius: 50%;
+  color: #0007;
+  background-color: #fff7;
+}
+
+.course_introduce_words {
+  width: 89%;
+  border-radius: 1.5rem;
+  padding: 20px 75px;
+  padding-bottom: 30px;
+  margin: 10px auto;
+  margin-top: 20px;
+  font-size: 2.25rem;
+  text-align: center;
+  background-color: #fff8;
+}
+
+
+.course_introduce_words_paragraph {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+  line-height: 1.5em;
+  text-indent: 1em;
+  letter-spacing: 1px;
+  background-image: linear-gradient(#fff0 93%, #0004 93%);
+  background-size: 100% 1.5em;
+}
+
+.more {
+  color: #fed857;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.more>a:visited {
+  color: #fed857;
+
+}
+
+/* 以上課程介紹 */
+/* ========================================= */
+.change_backgraound_front {
+  height: 50px;
+  background-image: linear-gradient(#84bae6, #6EADDF, #4F96D8);
+}
+
+/* ========================================= */
+/* 以下作品一覽 */
+.introduce_of_masterpiece {
+  background-color: #4F96D8;
+}
+
+/* 大花輪播 */
+/* FIXME: 大花輪播，之後RWD要大修 */
+.big_flower {
+  height: 600px;
+  width: 600px;
+  margin: auto;
+  display: grid;
+  grid-template: repeat(5, auto)/repeat(5, auto);
+}
+
+.big_flower>img:not(.circle_in_flower) {
+  width: 100px;
+  /*! height: 100px; */
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.big_flower>img:nth-child(even) {
+  aspect-ratio: 1/1;
+  width: 150px;
+}
+
+.big_flower>img:nth-child(4n+1) {
+  aspect-ratio: 3/2;
+  width: 150px;
+}
+
+.big_flower>img:first-child {
+  grid-column: 2/5;
+  grid-row: 2/5;
+  width: 300px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+/* .circle_in_flower {
+  grid-column: 2/5;
+  grid-row: 2/5;
+  width: 300px;
+  aspect-ratio: 1/1 !important;
+  border-radius: 50%;
+} */
+
+.big_flower_petal_top_left {
+  grid-column: 1;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+  transform:translate(130px,50px) rotate(-45deg);
+  transform-origin: 50px 136.6px;
+
+  /* aspect-ratio: 2/3; */
+  /* width: 100px; */
+  /* object-fit: cover; */
+}
+
+.big_flower_petal_top {
+  grid-column: 3;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+
+}
+
+.big_flower_petal_top_right {
+  grid-column: 5;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+  transform:translate(-80px,43px) rotate(45deg);
+  transform-origin: 50px 136.6px;
+}
+
+.big_flower_petal_right {
+  grid-column: 5;
+  grid-row: 3;
+  clip-path: path('M 0,50 L 86.6,0 A 50,50 0,0,1 86.6,100 L 0,50 z');
+  transform: translate(15px)
+
+}
+
+.big_flower_petal_bottom_right {
+  grid-column: 5;
+  grid-row: 5;
+  clip-path: var(--down_petal);
+  transform:translate(-84px,-30px) rotate(-45deg);
+  transform-origin: 50px top;
+
+}
+
+.big_flower_petal_bottom {
+  grid-column: 3;
+  grid-row: 5;
+  clip-path: var(--down_petal);
+transform: translate(0,15px)
+}
+
+.big_flower_petal_bottom_left {
+  grid-column: 1;
+  grid-row: 5;
+  clip-path: var(--down_petal);
+  transform:translate(130px,-30px) rotate(45deg);
+  transform-origin: 50px top;
+}
+
+.big_flower_petal_left {
+  grid-column: 1;
+  grid-row: 3;
+  clip-path: path('M 136.6,50 L 50,100 A 50,50 0,0,1 50,0 L 136.6,50 z');
+}
+
+
+
+
+
+
+
+/* 以上作品一覽 */
+/* ========================================= */
+.change_backgraound_back {
+  height: 50px;
+  background-image: linear-gradient(#4F96D8, #357ECD, #1C68C0);
+}
+
+/* ========================================= */
+/* 以下技法介紹 */
+.introduce_of_skill {
+  background-color: #1c68c0;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 0px #000
+}
+
+
+
+.skill_pic_and_intro_and_roulette {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  column-gap: 4rem;
+  row-gap: 1.5rem;
+
+}
+
+.skill_roulette {
+  grid-column: 1;
+  grid-row: 1;
+  /* height: 100px;
+  width: 100px; */
+  /* border-radius: 50%;
+  border: 1px solid #000; */
+}
+
+/* 花瓣輪盤 */
+/* FIXME: 花瓣輪盤，之後RWD要大修 */
+.flower_roulette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  /* border: 1px solid #000; */
+  font-size: 0;
+  height: 300px;
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+
+.flower_roulette>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flower_roulette>img:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+  transform: translate(83px) rotate(-60deg);
+  transform-origin: center 136.6px;
+
+}
+
+.flower_roulette>img:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+}
+
+.flower_roulette>img:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+  clip-path: var(--upper_petal);
+  transform: translate(-83px) rotate(60deg);
+  transform-origin: center 136.6px;
+
+}
+
+
+.flower_roulette>img:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+  clip-path: var(--down_petal);
+  transform: translate(83px) rotate(60deg);
+  transform-origin: top center;
+}
+
+.flower_roulette>img:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+  clip-path: var(--down_petal);
+}
+
+.flower_roulette>img:nth-child(6) {
+  grid-column: 3;
+  grid-row: 2;
+  clip-path: var(--down_petal);
+  transform: translate(-83px) rotate(-60deg);
+  transform-origin: top center;
+
+}
+
+/* --------- */
+.skill_intro {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #fff4;
+  border-radius: 1em;
+  padding: 40px;
+}
+
+.skill_intro h3 {
+  font-size: 2rem;
+}
+
+.skill_intro p {
+  font-size: 1.5rem;
+  line-height: 1.25em;
+  margin-top: 20px;
+}
+
+.skill_pic {
+  grid-column: 2;
+  grid-row: 1/3;
+}
+
+.skill_pic img {
+  width: 50vw;
+  border-radius: 1em;
+  /* clip-path: path('M 100,273 L 0,100 A 100,100 0,0,1 200,100 L 100,273 z'); */
+
+}
+
+
+/* 以上技法介紹 */
+/* ========================================= */
+.cover_under_page {
+  background-color: #1c68c0;
+}
