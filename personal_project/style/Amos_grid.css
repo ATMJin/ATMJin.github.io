@@ -1,0 +1,380 @@
+/* Amos老師提供的格線系統 */
+/* 最外層用container */
+/* 次層用row包覆 */
+/* 如果row裡面的cols要平均分配，row後面再下row_cols_$決定每層row要多少cols */
+/* row的次層下col_$決定每col佔一層的12分之幾 */
+/* 無標是手機尺寸 */
+/* md是平板直立，min-width: 768px */
+/* lg是平板橫向，min-width: 992px */
+/* xl是桌機，min-width: 1200px */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+[class*=col_] {
+  padding: 1px 10px;
+  box-sizing: border-box;
+}
+
+.col_1 {
+  width: 8.333333%;
+  /* (100%/12)*1 */
+}
+
+.col_2 {
+  width: 16.666666%;
+  /* (100%/12)*2 */
+}
+
+.col_3 {
+  width: 25%;
+  /* (100%/12)*3 */
+}
+
+.col_4 {
+  width: 33.333333%;
+  /* (100%/12)*4 */
+}
+
+.col_5 {
+  width: 41.666666%;
+  /* (100%/12)*5 */
+}
+
+.col_6 {
+  width: 50%;
+  /* (100%/12)*6 */
+}
+
+.col_7 {
+  width: 58.333333%;
+  /* (100%/12)*7 */
+}
+
+.col_8 {
+  width: 66.666666%;
+  /* (100%/12)*8 */
+}
+
+.col_9 {
+  width: 75%;
+  /* (100%/12)*9 */
+}
+
+.col_10 {
+  width: 83.333333%;
+  /* (100%/12)*10 */
+}
+
+.col_11 {
+  width: 91.666666%;
+  /* (100%/12)*11 */
+}
+
+.col_12 {
+  width: 100%;
+  /* (100%/12)*12 */
+}
+
+@media screen and (min-width: 768px) {
+  .col_md_1 {
+    width: 8.333333%;
+    /* (100%/12)*1 */
+  }
+
+  .col_md_2 {
+    width: 16.666666%;
+    /* (100%/12)*2 */
+  }
+
+  .col_md_3 {
+    width: 25%;
+    /* (100%/12)*3 */
+  }
+
+  .col_md_4 {
+    width: 33.333333%;
+    /* (100%/12)*4 */
+  }
+
+  .col_md_5 {
+    width: 41.666666%;
+    /* (100%/12)*5 */
+  }
+
+  .col_md_6 {
+    width: 50%;
+    /* (100%/12)*6 */
+  }
+
+  .col_md_7 {
+    width: 58.333333%;
+    /* (100%/12)*7 */
+  }
+
+  .col_md_8 {
+    width: 66.666666%;
+    /* (100%/12)*8 */
+  }
+
+  .col_md_9 {
+    width: 75%;
+    /* (100%/12)*9 */
+  }
+
+  .col_md_10 {
+    width: 83.333333%;
+    /* (100%/12)*10 */
+  }
+
+  .col_md_11 {
+    width: 91.666666%;
+    /* (100%/12)*11 */
+  }
+
+  .col_md_12 {
+    width: 100%;
+    /* (100%/12)*12 */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .col_lg_1 {
+    width: 8.333333%;
+    /* (100%/12)*1 */
+  }
+
+  .col_lg_2 {
+    width: 16.666666%;
+    /* (100%/12)*2 */
+  }
+
+  .col_lg_3 {
+    width: 25%;
+    /* (100%/12)*3 */
+  }
+
+  .col_lg_4 {
+    width: 33.333333%;
+    /* (100%/12)*4 */
+  }
+
+  .col_lg_5 {
+    width: 41.666666%;
+    /* (100%/12)*5 */
+  }
+
+  .col_lg_6 {
+    width: 50%;
+    /* (100%/12)*6 */
+  }
+
+  .col_lg_7 {
+    width: 58.333333%;
+    /* (100%/12)*7 */
+  }
+
+  .col_lg_8 {
+    width: 66.666666%;
+    /* (100%/12)*8 */
+  }
+
+  .col_lg_9 {
+    width: 75%;
+    /* (100%/12)*9 */
+  }
+
+  .col_lg_10 {
+    width: 83.333333%;
+    /* (100%/12)*10 */
+  }
+
+  .col_lg_11 {
+    width: 91.666666%;
+    /* (100%/12)*11 */
+  }
+
+  .col_lg_12 {
+    width: 100%;
+    /* (100%/12)*12 */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .col_xl_1 {
+    width: 8.333333%;
+    /* (100%/12)*1 */
+  }
+
+  .col_xl_2 {
+    width: 16.666666%;
+    /* (100%/12)*2 */
+  }
+
+  .col_xl_3 {
+    width: 25%;
+    /* (100%/12)*3 */
+  }
+
+  .col_xl_4 {
+    width: 33.333333%;
+    /* (100%/12)*4 */
+  }
+
+  .col_xl_5 {
+    width: 41.666666%;
+    /* (100%/12)*5 */
+  }
+
+  .col_xl_6 {
+    width: 50%;
+    /* (100%/12)*6 */
+  }
+
+  .col_xl_7 {
+    width: 58.333333%;
+    /* (100%/12)*7 */
+  }
+
+  .col_xl_8 {
+    width: 66.666666%;
+    /* (100%/12)*8 */
+  }
+
+  .col_xl_9 {
+    width: 75%;
+    /* (100%/12)*9 */
+  }
+
+  .col_xl_10 {
+    width: 83.333333%;
+    /* (100%/12)*10 */
+  }
+
+  .col_xl_11 {
+    width: 91.666666%;
+    /* (100%/12)*11 */
+  }
+
+  .col_xl_12 {
+    width: 100%;
+    /* (100%/12)*12 */
+  }
+}
+
+[class*=row_cols_] {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.row_cols_1>div {
+  width: 100%;
+}
+
+.row_cols_2>div {
+  width: 50%;
+}
+
+.row_cols_3>div {
+  width: 33.333333%;
+}
+
+.row_cols_4>div {
+  width: 25%;
+}
+
+.row_cols_5>div {
+  width: 20%;
+}
+
+.row_cols_6>div {
+  width: 16.666666%;
+}
+
+@media screen and (min-width:768px) {
+  .row_cols_md_1>div {
+    width: 100%;
+  }
+
+  .row_cols_md_2>div {
+    width: 50%;
+  }
+
+  .row_cols_md_3>div {
+    width: 33.333333%;
+  }
+
+  .row_cols_md_4>div {
+    width: 25%;
+  }
+
+  .row_cols_md_5>div {
+    width: 20%;
+  }
+
+  .row_cols_md_6>div {
+    width: 16.666666%;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .row_cols_lg_1>div {
+    width: 100%;
+  }
+
+  .row_cols_lg_2>div {
+    width: 50%;
+  }
+
+  .row_cols_lg_3>div {
+    width: 33.333333%;
+  }
+
+  .row_cols_lg_4>div {
+    width: 25%;
+  }
+
+  .row_cols_lg_5>div {
+    width: 20%;
+  }
+
+  .row_cols_lg_6>div {
+    width: 16.666666%;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .row_cols_xl_1>div {
+    width: 100%;
+  }
+
+  .row_cols_xl_2>div {
+    width: 50%;
+  }
+
+  .row_cols_xl_3>div {
+    width: 33.333333%;
+  }
+
+  .row_cols_xl_4>div {
+    width: 25%;
+  }
+
+  .row_cols_xl_5>div {
+    width: 20%;
+  }
+
+  .row_cols_xl_6>div {
+    width: 16.666666%;
+  }
+}

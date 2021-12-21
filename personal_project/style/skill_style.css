@@ -1,0 +1,67 @@
+body {
+  font-size: 1.5rem;
+}
+
+.skill {
+  background-color: var(--skill_color);
+}
+
+.text h2 {
+  font-size: 2rem;
+  line-height: 3;
+  background-color:#fff9;
+  border-radius:1em 1em 0 0;
+  padding-left: 10px;
+}
+
+.text p {
+  border-radius: 0 0 1em 1em;
+  background-color:#fff9;
+  line-height: 1.5;
+  padding: 10px;
+  padding-top: 0;
+}
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.row {
+  margin-bottom: 70px;
+}
+
+.row:last-child {
+  margin-bottom: 20px;
+}
+
+.row:nth-child(even) {
+  flex-direction: row-reverse;
+  /*   padding-right: 40px; */
+}
+
+.pic>img {
+  width: 100%;
+}
+/* .text{
+  background-color: #fff9;
+  border-radius: 1em;
+} */
+.row:nth-child(odd) .text {
+  padding-left: 60px;
+}
+
+.row:nth-child(even) .text {
+  padding-right: 60px;
+}
+
+div {
+/*   outline: 1px solid red; */
+}
+
+
+
+
+.cover_under_page {
+  background-color: #1c68c0;
+}

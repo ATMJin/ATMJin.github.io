@@ -3,6 +3,12 @@
   font-size: 2rem;
 }
 
+:root {
+  --course_color: #84bae6;
+  --masterpiece_color: #4F96D8;
+  --skill_color: #1c68c0;
+}
+
 body {
   position: relative;
   font-family: "Microsoft JhengHei",
