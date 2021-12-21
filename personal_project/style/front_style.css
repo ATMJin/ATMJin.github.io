@@ -21,8 +21,6 @@ section {
   margin-bottom: 40px;
 }
 
-.course_image {}
-
 .course_image_01 {
   display: block;
   width: 900px;
@@ -142,7 +140,7 @@ section {
   grid-column: 1;
   grid-row: 1;
   clip-path: var(--upper_petal);
-  transform:translate(130px,50px) rotate(-45deg);
+  transform: translate(130px, 50px) rotate(-45deg);
   transform-origin: 50px 136.6px;
 
   /* aspect-ratio: 2/3; */
@@ -161,7 +159,7 @@ section {
   grid-column: 5;
   grid-row: 1;
   clip-path: var(--upper_petal);
-  transform:translate(-80px,43px) rotate(45deg);
+  transform: translate(-80px, 43px) rotate(45deg);
   transform-origin: 50px 136.6px;
 }
 
@@ -170,14 +168,13 @@ section {
   grid-row: 3;
   clip-path: path('M 0,50 L 86.6,0 A 50,50 0,0,1 86.6,100 L 0,50 z');
   transform: translate(15px)
-
 }
 
 .big_flower_petal_bottom_right {
   grid-column: 5;
   grid-row: 5;
   clip-path: var(--down_petal);
-  transform:translate(-84px,-30px) rotate(-45deg);
+  transform: translate(-84px, -30px) rotate(-45deg);
   transform-origin: 50px top;
 
 }
@@ -186,14 +183,14 @@ section {
   grid-column: 3;
   grid-row: 5;
   clip-path: var(--down_petal);
-transform: translate(0,15px)
+  transform: translate(0, 15px)
 }
 
 .big_flower_petal_bottom_left {
   grid-column: 1;
   grid-row: 5;
   clip-path: var(--down_petal);
-  transform:translate(130px,-30px) rotate(45deg);
+  transform: translate(130px, -30px) rotate(45deg);
   transform-origin: 50px top;
 }
 

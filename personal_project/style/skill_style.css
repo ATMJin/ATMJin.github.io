@@ -3,22 +3,27 @@ body {
 }
 
 .skill {
-  background-color: var(--skill_color);
+  background-color: #1c68c0aa;
+}
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .text h2 {
   font-size: 2rem;
   line-height: 3;
-  background-color:#fff9;
-  border-radius:1em 1em 0 0;
-  padding-left: 10px;
+  background-color: #fff9;
+  border-radius: 1em 1em 0 0;
+  padding-left: 30px;
 }
 
 .text p {
   border-radius: 0 0 1em 1em;
-  background-color:#fff9;
+  background-color: #fff9;
   line-height: 1.5;
-  padding: 10px;
+  padding: 30px;
   padding-top: 0;
 }
 
@@ -42,7 +47,9 @@ body {
 
 .pic>img {
   width: 100%;
+  outline: 4px double #1c68c0aa;
 }
+
 /* .text{
   background-color: #fff9;
   border-radius: 1em;
@@ -55,13 +62,6 @@ body {
   padding-right: 60px;
 }
 
-div {
-/*   outline: 1px solid red; */
-}
-
-
-
-
 .cover_under_page {
-  background-color: #1c68c0;
+  background-color: #1c68c0aa;
 }

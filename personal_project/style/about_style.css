@@ -1,0 +1,29 @@
+.about_me {
+  background-color: #C7F2FF;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.pic>img {
+  width: 100%;
+}
+
+.text {
+  padding: 0 60px;
+}
+
+.text>h2 {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.text>p {
+  font-size: 1.5rem;
+  letter-spacing: .15em;
+  line-height: 1.2
+}
+
+.cover_under_page {
+  background-color: #C7F2FF;
+}

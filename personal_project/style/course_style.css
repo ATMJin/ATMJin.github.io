@@ -1,0 +1,28 @@
+.course {
+  background-color: var(--course_color);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.row {
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 0 50px;
+}
+.pic>img{
+  width: 100%;
+}
+.text>h2{
+  font-size: 2rem;
+  line-height:2
+}
+.text>p{
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: .05em;
+}
+.cover_under_page {
+  background-color: var(--course_color);
+}
