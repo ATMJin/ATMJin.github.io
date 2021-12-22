@@ -1,0 +1,39 @@
+.masterpiece {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
+  row-gap: 20px;
+  column-gap: 20px;
+  background-color: var(--masterpiece_color);
+}
+
+.card {
+  grid-column: 4;
+  grid-row: 1/6;
+/*   border: 1px solid #000; */
+}
+
+.card>.pic {
+  width: 420px;
+  margin: auto;
+}
+
+.card>.pic>img {
+  width: 100%;
+}
+
+.card>.text{
+  padding: 0 30px;
+}
+.text>h2{
+  font-size: 2rem;
+  line-height: 2em;
+}
+.text>p{
+  font-size: 1.25rem;
+}
+
+.cover_under_page {
+  background-color: var(--masterpiece_color);
+}

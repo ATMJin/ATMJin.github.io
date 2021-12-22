@@ -30,6 +30,7 @@ section {
 }
 
 /* 輪播列左右按鈕 */
+/* TODO: 之後要改成botton */
 .course_image::before {
   content: " <";
   display: block;
@@ -39,6 +40,20 @@ section {
   position: absolute;
   top: 30%;
   left: 1%;
+  border-radius: 50%;
+  color: #0007;
+  background-color: #fff7;
+}
+
+.course_image::after {
+  content: ">";
+  display: block;
+  font-size: 5.5rem;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 90%;
   border-radius: 50%;
   color: #0007;
   background-color: #fff7;
