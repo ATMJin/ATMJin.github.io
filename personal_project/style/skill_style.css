@@ -3,12 +3,12 @@ body {
 }
 
 .skill {
-  background-color: #1c68c0aa;
+  background-color: #357ECDe5;
 }
 
 .container {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 50px 40px 40px;
+  /* max-width: 1713px; */
 }
 
 .text h2 {
@@ -25,11 +25,6 @@ body {
   line-height: 1.5;
   padding: 30px;
   padding-top: 0;
-}
-
-.container {
-  padding-top: 50px;
-  padding-bottom: 40px;
 }
 
 .row {

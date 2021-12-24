@@ -1,7 +1,14 @@
 .about_me {
   background-color: #C7F2FF;
   padding-top: 20px;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
+  /* height: 100vw; */
+}
+
+
+
+.pic {
+  margin-bottom: 40px;
 }
 
 .pic>img {
@@ -14,6 +21,8 @@
 
 .text>h2 {
   font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-align: center;
   line-height: 1.5;
 }
@@ -26,4 +35,15 @@
 
 .cover_under_page {
   background-color: #C7F2FF;
+}
+
+@media screen and (min-width: 1400px) {
+  .about_me {
+    height: 61vh;
+    padding-top: 30px;
+  }
+
+  .container {
+    max-width: 1700px;
+  }
 }

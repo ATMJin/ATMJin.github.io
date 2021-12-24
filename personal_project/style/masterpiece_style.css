@@ -1,5 +1,5 @@
 .masterpiece {
-  padding: 30px;
+  padding: 30px var(--main_padding_LR);
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(5, auto);
@@ -8,10 +8,26 @@
   background-color: var(--masterpiece_color);
 }
 
+.masterpiece>.pic:nth-last-child(-n+5) {
+  display: none;
+}
+
+@media screen and (min-width:1650px) {
+  .masterpiece {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  .masterpiece>.pic:nth-last-child(-n+5) {
+    display: block;
+  }
+}
+
+
+
 .card {
-  grid-column: 4;
+  grid-column: -2;
   grid-row: 1/6;
-/*   border: 1px solid #000; */
+  /*   border: 1px solid #000; */
 }
 
 .card>.pic {
@@ -23,14 +39,17 @@
   width: 100%;
 }
 
-.card>.text{
-  padding: 0 30px;
+.card>.text {
+  /* padding: 0 30px; */
+  padding: 0 3.8363%;
 }
-.text>h2{
+
+.text>h2 {
   font-size: 2rem;
   line-height: 2em;
 }
-.text>p{
+
+.text>p {
   font-size: 1.25rem;
 }
 
