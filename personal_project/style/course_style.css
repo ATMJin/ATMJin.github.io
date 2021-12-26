@@ -1,12 +1,18 @@
 .course {
   background-color: var(--course_color);
   /* background-color: #84bae6cc; */
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 30px;
 }
 
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
 .row {
-  margin-bottom: 30px;
+  margin-bottom: 8rem;
 }
 
 .card {
@@ -19,13 +25,15 @@
 
 .text>h2 {
   font-size: 2rem;
+  letter-spacing: 0.2em;
   line-height: 2
 }
 
 .text>p {
-  font-size: 1.25rem;
-  line-height: 1.25;
-  letter-spacing: .05em;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: .1em;
 }
 
 .cover_under_page {

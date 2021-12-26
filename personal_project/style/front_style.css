@@ -5,9 +5,36 @@ section {
 }
 
 :root {
-  /* 寬100高150 */
+  /* 花瓣路徑，寬100高150 */
   --upper_petal: path('M 50,136.6 L 0,50 A 50,50 0,0,1 100,50 L 50,136.6 z');
   --down_petal: path('M 50,0 L 0,86.6 A 50,50 0,0,0 100,86.6 L 50,0 z');
+  /* 花瓣路徑，1.5倍 */
+  --upper_petal_bigger: path('M 75,204.9 L 0,75 A 75,75 0,0,1 150,75 L 75,204.9 z');
+  --down_petal_bigger: path('M 75,0 L 0,129.9 A 75,75 0,0,0 150,129.9 L 75,0 z');
+}
+
+h2 {
+  letter-spacing: .1em;
+}
+
+h3 {
+  letter-spacing: .1em;
+}
+
+p {
+  letter-spacing: .2em;
+}
+
+.more {
+  color: #fed857;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-top: 20px;
+  text-shadow: 1px 1px darkblue;
+}
+
+.more>a:visited {
+  color: #fed857;
 }
 
 /* ========================================= */
@@ -15,6 +42,7 @@ section {
 .introduce_of_course {
   background-color: #84bae6;
   position: relative;
+  overflow: hidden;
 }
 
 .introduce_of_course>h2 {
@@ -25,16 +53,48 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .course_image {
-  width: 70vw;
+  width: 60vw;
 }
 
-.course_image_01 {
+/* 佔位用圖片 */
+.course_image.nothing>.nothing {
   width: 100%;
-
+  opacity: 0;
 }
+
+/* 輪播的圖片 */
+.course_image.carousel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 1000ms;
+}
+
+/* 待輪播的圖片 */
+.course_image.carousel.hidden {
+  opacity: 0;
+}
+
+.course_image.carousel.hidden.hidden_left {
+  opacity: 0;
+  left: -2000px;
+}
+
+.course_image.carousel.hidden.hidden_right {
+  opacity: 0;
+  left: 2000px;
+}
+
+.course_image.carousel>img {
+  width: 100%;
+}
+
 
 /* 輪播列左右按鈕 */
 .btn {
@@ -60,7 +120,7 @@ section {
 
 .course_introduce_words {
   width: 89%;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   padding: 20px 75px;
   padding-bottom: 30px;
   margin: 10px auto;
@@ -79,22 +139,10 @@ section {
   line-height: 1.5em;
   text-indent: 1em;
   letter-spacing: 1px;
-  background-image: linear-gradient(#fff0 96%, #0003 96%);
+  background-image: linear-gradient(#fff0 96%, #0002 97%);
   background-size: 100% 1.5em;
 }
 
-.more {
-  color: #fed857;
-  font-size: 1.5rem;
-  text-align: right;
-  margin-top: 20px;
-  text-shadow: 1px 1px darkblue;
-}
-
-.more>a:visited {
-  color: #fed857;
-
-}
 
 /* 以上課程介紹 */
 /* ========================================= */
@@ -177,24 +225,18 @@ section {
   border-radius: 50%;
 }
 
-
 .big_flower_petal_top_left {
   grid-column: 1;
   grid-row: 1;
   clip-path: var(--upper_petal);
   transform: translate(130px, 50px) rotate(-45deg);
   transform-origin: 50px 136.6px;
-
-  /* aspect-ratio: 2/3; */
-  /* width: 100px; */
-  /* object-fit: cover; */
 }
 
 .big_flower_petal_top {
   grid-column: 3;
   grid-row: 1;
   clip-path: var(--upper_petal);
-
 }
 
 .big_flower_petal_top_right {
@@ -218,7 +260,6 @@ section {
   clip-path: var(--down_petal);
   transform: translate(-84px, -30px) rotate(-45deg);
   transform-origin: 50px top;
-
 }
 
 .big_flower_petal_bottom {
@@ -242,9 +283,70 @@ section {
   clip-path: path('M 136.6,50 L 50,100 A 50,50 0,0,1 50,0 L 136.6,50 z');
 }
 
+@media screen and (min-width:1500px) {
+  .big_flower {
+    height: 900px;
+    width: 900px;
+  }
 
+  .big_flower>img:not(.circle_in_flower) {
+    width: 150px;
+  }
 
+  .big_flower>img:nth-child(even) {
+    width: 225px;
+  }
 
+  .big_flower>img:nth-child(4n+1) {
+    width: 225px;
+  }
+
+  .big_flower>img:first-child {
+    width: 450px;
+  }
+
+  .big_flower_petal_top_left {
+    clip-path: var(--upper_petal_bigger);
+    transform: translate(195px, 75px) rotate(-45deg);
+    transform-origin: 75px 204.9px;
+  }
+
+  .big_flower_petal_top {
+    clip-path: var(--upper_petal_bigger);
+  }
+
+  .big_flower_petal_top_right {
+    clip-path: var(--upper_petal_bigger);
+    transform: translate(-120px, 64.5px) rotate(45deg);
+    transform-origin: 75px 204.9px;
+  }
+
+  .big_flower_petal_right {
+    clip-path: path('M 0,65 L 129.9,0 A 65,65 0,0,1 129.9,150 L 0,65 z');
+    transform: translate(22.5px)
+  }
+
+  .big_flower_petal_bottom_right {
+    clip-path: var(--down_petal_bigger);
+    transform: translate(-126px, -45px) rotate(-45deg);
+    transform-origin: 75px top;
+  }
+
+  .big_flower_petal_bottom {
+    clip-path: var(--down_petal_bigger);
+    transform: translate(0, 22.5px)
+  }
+
+  .big_flower_petal_bottom_left {
+    clip-path: var(--down_petal_bigger);
+    transform: translate(195px, -45px) rotate(45deg);
+    transform-origin: 75px top;
+  }
+
+  .big_flower_petal_left {
+    clip-path: path('M 204.9,75 L 75,150 A 75,75 0,0,1 75,0 L 204.9,75 z');
+  }
+}
 
 
 
@@ -279,6 +381,8 @@ section {
 .skill_roulette {
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  align-items: center;
   /* height: 100px;
   width: 100px; */
   /* border-radius: 50%;
@@ -309,8 +413,8 @@ section {
   grid-row: 1;
   clip-path: var(--upper_petal);
   transform: translate(83px) rotate(-60deg);
+  filter: brightness(40%);
   transform-origin: center 136.6px;
-
 }
 
 .flower_roulette>img:nth-child(2) {
@@ -324,22 +428,23 @@ section {
   grid-row: 1;
   clip-path: var(--upper_petal);
   transform: translate(-83px) rotate(60deg);
+  filter: brightness(40%);
   transform-origin: center 136.6px;
-
 }
-
 
 .flower_roulette>img:nth-child(4) {
   grid-column: 1;
   grid-row: 2;
   clip-path: var(--down_petal);
   transform: translate(83px) rotate(60deg);
+  filter: brightness(40%);
   transform-origin: top center;
 }
 
 .flower_roulette>img:nth-child(5) {
   grid-column: 2;
   grid-row: 2;
+  filter: brightness(40%);
   clip-path: var(--down_petal);
 }
 
@@ -348,8 +453,46 @@ section {
   grid-row: 2;
   clip-path: var(--down_petal);
   transform: translate(-83px) rotate(-60deg);
+  filter: brightness(40%);
   transform-origin: top center;
+}
 
+@media screen and (min-width:1500px) {
+  .flower_roulette {
+    height: 450px;
+  }
+
+  .flower_roulette>img:nth-child(1) {
+    clip-path: var(--upper_petal_bigger);
+    transform: translate(124.5px) rotate(-60deg);
+    transform-origin: center 204.9px;
+  }
+
+  .flower_roulette>img:nth-child(2) {
+    clip-path: var(--upper_petal_bigger);
+  }
+
+  .flower_roulette>img:nth-child(3) {
+    clip-path: var(--upper_petal_bigger);
+    transform: translate(-124.5px) rotate(60deg);
+    transform-origin: center 204.9px;
+  }
+
+  .flower_roulette>img:nth-child(4) {
+    clip-path: var(--down_petal_bigger);
+    transform: translate(124.5px) rotate(60deg);
+    transform-origin: top center;
+  }
+
+  .flower_roulette>img:nth-child(5) {
+    clip-path: var(--down_petal_bigger);
+  }
+
+  .flower_roulette>img:nth-child(6) {
+    clip-path: var(--down_petal_bigger);
+    transform: translate(-124.5px) rotate(-60deg);
+    transform-origin: top center;
+  }
 }
 
 /* --------- */
@@ -357,7 +500,7 @@ section {
   grid-column: 1;
   grid-row: 2;
   background-color: #fff4;
-  border-radius: 1em;
+  border-radius: 0.75rem;
   padding: 40px;
 }
 
@@ -367,8 +510,10 @@ section {
 
 .skill_intro p {
   font-size: 1.5rem;
-  line-height: 1.25em;
+  line-height: 1.5em;
+  font-weight: 300;
   margin-top: 20px;
+  white-space: pre-line;
 }
 
 .skill_pic {
@@ -383,9 +528,53 @@ section {
 
 }
 
-
 /* 以上技法介紹 */
 /* ========================================= */
 .cover_under_page {
-  background-color: #1c68c0;
+  background-color: var(--skill_color);
+}
+
+.cover_line_message {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url(../img/LINE_APP_Android.png);
+  opacity: 1;
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+}
+
+.cover_line_message::after {
+  content: "歡迎聯絡";
+  display: block;
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 105px;
+  right: 80px;
+  background-color: #fff4;
+  /* border: 1px solid #000; */
+}
+
+.line_message {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.go_to_top {
+  background-color: #fff;
+  opacity: 0.5;
+  font-family: "fontawesome";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

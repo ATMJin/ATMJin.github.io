@@ -24,26 +24,28 @@
   margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
+  letter-spacing: .2em;
   line-height: 1.5;
 }
 
 .text>p {
   font-size: 1.5rem;
-  letter-spacing: .15em;
-  line-height: 1.2
+  letter-spacing: .1em;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 .cover_under_page {
   background-color: #C7F2FF;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
   .about_me {
-    height: 61vh;
+    /* height: 61vh; */
     padding-top: 30px;
   }
 
   .container {
-    max-width: 1700px;
+    max-width: 1600px;
   }
 }

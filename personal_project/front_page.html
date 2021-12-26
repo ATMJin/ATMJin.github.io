@@ -13,7 +13,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/main_style.css">
@@ -48,8 +50,17 @@
       <h2>課程介紹</h2>
       <div class="course_image_with_button">
         <button class="btn pre_pic"><i class="fas fa-angle-left"></i></button>
-        <div class="course_image">
+        <div class="course_image nothing">
+          <img class="course_image_01 nothing" src="img/master.jpg" alt="車縫染課程">
+        </div>
+        <div class="course_image carousel show">
           <img class="course_image_01" src="img/master.jpg" alt="車縫染課程">
+        </div>
+        <div class="course_image carousel hidden hidden_left">
+          <img class="course_image_01" src="img/class_woman_169.jpg" alt="車縫染課程">
+        </div>
+        <div class="course_image carousel hidden hidden_right">
+          <img class="course_image_01" src="img/class_three_women_169.jpg" alt="車縫染課程">
         </div>
         <button class="btn next_pic"><i class="fas fa-angle-right"></i></button>
       </div>
@@ -76,10 +87,9 @@
         <img src="img/masterpiece_whale.jpg" alt="鯨魚" class="circle_in_flower"></img>
         <img src="img/masterpiece_wave.jpg" alt="" class="big_flower_petal big_flower_petal_top_left"></img>
         <img src="img/masterpiece_wolf.jpg" alt="" class="big_flower_petal big_flower_petal_top"></img>
-        <img src="img/masterpiece_whiteCircle_and_blueLine.jpg" alt=""
-          class="big_flower_petal big_flower_petal_top_right"></img>
+        <img src="img/min/masterpiece_11.jpg" alt="" class="big_flower_petal big_flower_petal_top_right"></img>
         <img src="img/masterpiece_wave.jpg" alt="" class="big_flower_petal big_flower_petal_right"></img>
-        <img src="img/masterpiece_small_bag.jpg" alt="" class="big_flower_petal big_flower_petal_bottom_right"></img>
+        <img src="img/min/masterpiece_02.jpg" alt="" class="big_flower_petal big_flower_petal_bottom_right"></img>
         <img src="img/masterpiece_maria.jpg" alt="" class="big_flower_petal big_flower_petal_bottom"></img>
         <img src="img/masterpiece_happy_baby.jpg" alt="" class="big_flower_petal big_flower_petal_bottom_left"></img>
         <img src="img/masterpiece_ginkgo.jpg" alt="" class="big_flower_petal big_flower_petal_left"></img>
@@ -105,7 +115,7 @@
         <div class="skill_roulette">
           <div class="flower_roulette">
             <img class="roulette_top_left" src="img/skill_heart_circle.jpg" alt=""></img>
-            <img class="roulette_top" src="img/skill_plant.jpg" alt="荔枝殼染">
+            <img class="roulette_top" src="img/masterpiece_eagle.jpg" alt="蠟染">
             <img class="roulette_top_right" src="img/skill_linear_gradien.jpg" alt=""></img>
             <img class="roulette_bottom_left" src="img/skill_squir.jpg" alt=""></img>
             <img class="roulette_bottom" src="img/skill_whiteCircle_and_blueBackground.jpg" alt="綁染"></img>
@@ -113,11 +123,13 @@
           </div>
         </div>
         <div class="skill_intro">
-          <h3>綁染</h3>
-          <p>介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字</p>
+          <h3>蠟染</h3>
+          <p>使用畫筆將蠟塗在布料上，吸滿蠟液的地方將不會使染液滲入，形成淺色區域。
+            因為如同使用畫筆繪圖，在圖像上會有很高的自由度。
+          </p>
         </div>
         <div class="skill_pic">
-          <img src="img/skill_whiteCircle_and_blueBackground.jpg" alt="綁染">
+          <img src="img/masterpiece_eagle.jpg" alt="綁染">
         </div>
       </div>
       <div class="more">
@@ -152,6 +164,12 @@
     </footer>
   </div>
 
+  <a class="cover_line_message" href="https://line.me/ti/p/CC5-CxTp8R">
+    <img src="img/LINE_APP_Android.png" alt="" class="line_message">
+  </a>
+  <div class="go_to_top">
+    <a href="#"><i class="fas fa-angle-up"></i></a>
+  </div>
   <script src="script/front.script.js"></script>
 </body>
 

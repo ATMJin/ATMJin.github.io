@@ -3,7 +3,9 @@ body {
 }
 
 .skill {
+  position: relative;
   background-color: #357ECDe5;
+  overflow: hidden;
 }
 
 .container {
@@ -15,14 +17,17 @@ body {
   font-size: 2rem;
   line-height: 3;
   background-color: #fff9;
-  border-radius: 1em 1em 0 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  letter-spacing: .2em;
   padding-left: 30px;
 }
 
 .text p {
-  border-radius: 0 0 1em 1em;
+  border-radius: 0 0 0.75rem 0.75rem;
   background-color: #fff9;
   line-height: 1.5;
+  letter-spacing: .1em;
+  font-weight: 300;
   padding: 30px;
   padding-top: 0;
 }
@@ -42,7 +47,7 @@ body {
 
 .pic>img {
   width: 100%;
-  outline: 4px double #1c68c0aa;
+  /* outline: 4px double #1c68c0aa; */
 }
 
 /* .text{
@@ -57,6 +62,72 @@ body {
   padding-right: 60px;
 }
 
+
+/* ============================== */
 .cover_under_page {
-  background-color: #1c68c0aa;
+  background-color: #357ECDe5;
+}
+
+/* FHD寬螢幕背景裝飾 */
+@media screen and (min-width:1600px) {
+  .cover_background_flower {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    top: 200px;
+    left: 0.3%;
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(even) {
+    top: calc(200px + 1 * 500px);
+    left: 85%;
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(3) {
+    top: calc(200px + 2 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(4) {
+    top: calc(200px + 3 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(5) {
+    top: calc(200px + 4 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(6) {
+    top: calc(200px + 5 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(7) {
+    top: calc(200px + 6 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(8) {
+    top: calc(200px + 7 * 500px);
+  }
+
+  .background_flower {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    /* top: 20px; */
+    /* right: 0; */
+    background-image: radial-gradient(#Fff2 10%, #0000 20%),
+      radial-gradient(ellipse 40% 80%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 80% 40%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 40% 80%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 80% 40%, #fff4 20%, #0000 20%);
+    /*     background-size: 200px 200px; */
+    background-position: 0 0,
+      0 calc(15vw * 0.30),
+      calc(15vw * 0.30) 0,
+      0 calc(-15vw * 0.30),
+      calc(-15vw * 0.30) 0;
+    background-repeat: no-repeat;
+  }
+
+  .bgf2 {
+    transform: rotate(45deg);
+  }
 }
