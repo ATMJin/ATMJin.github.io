@@ -120,7 +120,7 @@ p {
 
 
 .course_introduce_words {
-  width: 89%;
+  width: 70%;
   border-radius: 0.75rem;
   padding: 20px 75px;
   padding-bottom: 30px;
@@ -130,6 +130,8 @@ p {
   text-align: center;
   background-color: #fff8;
   transition: 1000ms;
+  left: 0;
+  right: 0;
 }
 
 .course_introduce_words_paragraph {
