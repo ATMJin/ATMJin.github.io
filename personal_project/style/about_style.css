@@ -1,3 +1,8 @@
+a[href="about_me.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
 .about_me {
   background-color: #C7F2FF;
   padding-top: 20px;

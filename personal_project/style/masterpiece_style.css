@@ -1,3 +1,8 @@
+a[href="masterpiece_page.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
 .masterpiece {
   padding: 50px var(--main_padding_LR);
   display: grid;
