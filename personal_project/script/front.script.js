@@ -57,11 +57,22 @@ function next_pic() {
   paragraph03.classList.add("show");
 }
 
-
+function change_flower(e) {
+  let big_flower = document.getElementsByClassName("circle_in_flower")[0];
+  big_flower.src = e.target.src
+}
 
 function init() {
   document.getElementsByClassName("pre_pic")[0].addEventListener("click", pre_pic, false);
   document.getElementsByClassName("next_pic")[0].addEventListener("click", next_pic, false);
+  let big_flower_petal = document.getElementsByClassName("big_flower_petal")
+  for (let i = 0; i < big_flower_petal.length; i++) {
+    big_flower_petal[i].addEventListener("click", change_flower, false);
+  }
+  let small_flower_petal = document.querySelectorAll("img[class^='roulette_']")
+  for (let i = 0; i < small_flower_petal.length; i++) {
+    small_flower_petal[i].addEventListener("click", change_small_flower, false);
+  }
 }
 
 
