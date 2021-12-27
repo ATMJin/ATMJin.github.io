@@ -118,6 +118,7 @@ p {
   left: 5px;
 }
 
+
 .course_introduce_words {
   width: 89%;
   border-radius: 0.75rem;
@@ -128,8 +129,8 @@ p {
   font-size: 2.25rem;
   text-align: center;
   background-color: #fff8;
+  transition: 1000ms;
 }
-
 
 .course_introduce_words_paragraph {
   font-size: 1.5rem;
@@ -143,6 +144,26 @@ p {
   background-size: 100% 1.5em;
 }
 
+/* 文字輪播 */
+.course_introduce_words.nothing {
+  opacity: 0;
+}
+
+.course_introduce_words.carousel {
+  position: absolute;
+}
+
+.course_introduce_words.carousel.hidden {
+  opacity: 0;
+}
+
+.course_introduce_words.carousel.hidden_left {
+  left: -2000px;
+}
+
+.course_introduce_words.carousel.hidden_right {
+  left: 2000px;
+}
 
 /* 以上課程介紹 */
 /* ========================================= */
