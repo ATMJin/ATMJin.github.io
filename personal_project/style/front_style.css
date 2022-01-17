@@ -1,6 +1,8 @@
 section {
-  /* position: relative; */
-  padding: 40px 4.6875vw;
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding-bottom: 20px;
 }
 
@@ -26,11 +28,14 @@ p {
 }
 
 .more {
-  color: #fed857;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-align: right;
   margin-top: 20px;
-  text-shadow: 1px 1px darkblue;
+  text-shadow: 1px 1px 2px darkblue;
+}
+
+.more>a {
+  color: #fed857;
 }
 
 .more>a:visited {
@@ -39,14 +44,13 @@ p {
 
 /* ========================================= */
 /* 以下課程介紹 */
-.introduce_of_course {
+.outer_intro {
   background-color: #84bae6;
-  position: relative;
   overflow: hidden;
 }
 
 .introduce_of_course>h2 {
-  margin-bottom: 40px;
+  line-height: 3em;
 }
 
 .course_image_with_button {
@@ -57,7 +61,7 @@ p {
 }
 
 .course_image {
-  width: 60vw;
+  width: 100%;
 }
 
 /* 佔位用圖片 */
@@ -98,50 +102,74 @@ p {
 
 /* 輪播列左右按鈕 */
 .btn {
+  position: absolute;
+  z-index: 1;
   width: 100px;
-  height: 100px;
+  height: 150px;
   font-size: 5.5rem;
   border: 0;
   border-radius: 50%;
-  color: #0007;
-  background-color: #fff7;
+  color: #0009;
+  background-color: #fff0;
+  cursor: pointer;
   font-family: "fontawesome";
 }
 
-.btn:first-of-type>i {
+.btn:hover {
+  background-color: #fff3;
+  transition: .5s;
+}
+
+.pre_pic {
+  left: -40px;
+}
+
+.pre_pic>i {
   position: relative;
   left: -5px;
 }
 
-.btn:last-of-type>i {
+.next_pic {
+  right: -40px;
+}
+
+.next_pic>i {
   position: relative;
   left: 5px;
 }
 
 
 .course_introduce_words {
-  width: 70%;
+  width: 90%;
   border-radius: 0.75rem;
-  padding: 20px 75px;
+  /* padding-top: 20px; */
   padding-bottom: 30px;
   margin: 10px auto;
   margin-top: 20px;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: #fff8;
-  transition: 1000ms;
+  transition: 1s;
   left: 0;
   right: 0;
+  white-space: pre-line;
+}
+
+.course_introduce_words h3 {
+  margin-top: 20px;
 }
 
 .course_introduce_words_paragraph {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 10px;
   padding-bottom: 5px;
   text-align: left;
   line-height: 1.5em;
   text-indent: 1em;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   background-image: linear-gradient(#fff0 96%, #0002 97%);
   background-size: 100% 1.5em;
 }
@@ -170,16 +198,27 @@ p {
 /* 以上課程介紹 */
 /* ========================================= */
 .change_backgraound_front {
+  /* height: 60vh;
+  background-image: url(../img/bg_01.jpg);
+  background-size: cover;
+  background-attachment: fixed; */
   height: 50px;
   background-image: linear-gradient(#84bae6, #6EADDF, #4F96D8);
 }
 
 /* ========================================= */
 /* 以下作品一覽 */
+.outer_master {
+  background-color: #4F96D8;
+}
+
 .introduce_of_masterpiece {
   position: relative;
   overflow: hidden;
-  background-color: #4F96D8;
+}
+
+.introduce_of_masterpiece h2 {
+  line-height: 3em;
 }
 
 /* 小花背景裝飾 */
@@ -202,6 +241,7 @@ p {
     0 calc(-25vw * 0.30),
     calc(-25vw * 0.30) 0;
   background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .bgf2 {
@@ -216,11 +256,21 @@ p {
 /* 大花輪播 */
 /* FIXME: 大花輪播，之後RWD要大修 */
 .big_flower {
+  position: relative;
+  z-index: 1;
   height: 600px;
   width: 600px;
   margin: auto;
   display: grid;
   grid-template: repeat(5, auto)/repeat(5, auto);
+  transform-origin: top left;
+  transform: scale(53%);
+}
+
+@media screen and (min-width:768px) {
+  .big_flower {
+    transform: scale(100%);
+  }
 }
 
 .big_flower>img:not(.circle_in_flower) {
@@ -228,6 +278,11 @@ p {
   /*! height: 100px; */
   aspect-ratio: 2/3;
   object-fit: cover;
+  filter: brightness(40%);
+}
+
+.big_flower>img:not(.circle_in_flower).lighter {
+  filter: brightness(100%);
 }
 
 .big_flower>img:nth-child(even) {
@@ -382,34 +437,29 @@ p {
 
 /* ========================================= */
 /* 以下技法介紹 */
-.introduce_of_skill {
-  /* background-color: var(--skill_color); */
+.outer_skill {
   background-color: #357ECD;
-  /* color: #f0f0f0; */
-  color: #e3e3e3;
-  text-shadow: 1px 1px 0px #000
 }
 
+.introduce_of_skill {
+  color: #e3e3e3;
+  text-shadow: 1px 1px 1px #0007;
+}
 
+.introduce_of_skill h2 {
+  line-height: 3em;
+}
 
 .skill_pic_and_intro_and_roulette {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  /* grid-template-rows: 1fr 1fr; */
-  column-gap: 4rem;
-  row-gap: 1.5rem;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .skill_roulette {
-  grid-column: 1;
-  grid-row: 1;
+
   display: flex;
   align-items: center;
-  /* height: 100px;
-  width: 100px; */
-  /* border-radius: 50%;
-  border: 1px solid #000; */
+
 }
 
 /* 花瓣輪盤 */
@@ -429,6 +479,11 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(40%);
+}
+
+.flower_roulette>img.lighter {
+  filter: brightness(100%);
 }
 
 .flower_roulette>img:nth-child(1) {
@@ -436,7 +491,6 @@ p {
   grid-row: 1;
   clip-path: var(--upper_petal);
   transform: translate(83px) rotate(-60deg);
-  filter: brightness(40%);
   transform-origin: center 136.6px;
 }
 
@@ -451,32 +505,28 @@ p {
   grid-row: 1;
   clip-path: var(--upper_petal);
   transform: translate(-83px) rotate(60deg);
-  filter: brightness(40%);
   transform-origin: center 136.6px;
 }
 
 .flower_roulette>img:nth-child(4) {
-  grid-column: 1;
+  grid-column: 3;
   grid-row: 2;
   clip-path: var(--down_petal);
-  transform: translate(83px) rotate(60deg);
-  filter: brightness(40%);
+  transform: translate(-83px) rotate(-60deg);
   transform-origin: top center;
 }
 
 .flower_roulette>img:nth-child(5) {
   grid-column: 2;
   grid-row: 2;
-  filter: brightness(40%);
   clip-path: var(--down_petal);
 }
 
 .flower_roulette>img:nth-child(6) {
-  grid-column: 3;
+  grid-column: 1;
   grid-row: 2;
   clip-path: var(--down_petal);
-  transform: translate(-83px) rotate(-60deg);
-  filter: brightness(40%);
+  transform: translate(83px) rotate(60deg);
   transform-origin: top center;
 }
 
@@ -503,7 +553,7 @@ p {
 
   .flower_roulette>img:nth-child(4) {
     clip-path: var(--down_petal_bigger);
-    transform: translate(124.5px) rotate(60deg);
+    transform: translate(-124.5px) rotate(-60deg);
     transform-origin: top center;
   }
 
@@ -512,43 +562,66 @@ p {
   }
 
   .flower_roulette>img:nth-child(6) {
+
     clip-path: var(--down_petal_bigger);
-    transform: translate(-124.5px) rotate(-60deg);
+    transform: translate(124.5px) rotate(60deg);
     transform-origin: top center;
   }
 }
 
 /* --------- */
 .skill_intro {
-  grid-column: 1;
-  grid-row: 2;
   background-color: #fff4;
   border-radius: 0.75rem;
-  padding: 40px;
+  padding: 0 10px;
+  padding-bottom: 10px;
 }
 
 .skill_intro h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 3em;
 }
 
 .skill_intro p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.5em;
   font-weight: 300;
-  margin-top: 20px;
+  text-align: justify;
   white-space: pre-line;
 }
 
 .skill_pic {
-  grid-column: 2;
-  grid-row: 1/3;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .skill_pic img {
-  width: 50vw;
+  width: 100%;
   border-radius: 1em;
-  /* clip-path: path('M 100,273 L 0,100 A 100,100 0,0,1 200,100 L 100,273 z'); */
+}
 
+@media screen and (min-width:768px) {
+  .skill_pic_and_intro_and_roulette {
+    flex-direction: row;
+    /* flex-wrap: wrap;
+    height: 500px; */
+  }
+
+  .skill_pic_and_intro_and_roulette>div:first-child {
+    margin-right: 10px;
+  }
+
+  .skill_pic {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .course_image {
+    width: 70%;
+    max-width: 1200px;
+  }
 }
 
 /* 以上技法介紹 */
@@ -567,6 +640,7 @@ p {
   position: fixed;
   right: 20px;
   bottom: 90px;
+  z-index: 2;
 }
 
 .cover_line_message::after {
@@ -600,4 +674,269 @@ p {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+/* 進版動畫 */
+.logo_flower_animation {
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 17px);
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  animation: logo_flower_animation_bg .5s linear;
+  animation-delay: 5s;
+  display: none;
+}
+
+.logo_flower_animation div {
+  background-repeat: no-repeat;
+  position: absolute;
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  width: 0px;
+  height: 0px;
+  /* margin: auto; */
+
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.logo_flower_black {
+  background-image: radial-gradient(#000 20%, #fff 60%);
+  mix-blend-mode: screen;
+  background-position: center;
+  animation-name: logo_flower_animation_b;
+}
+
+.logo_flower {
+  background-image: url(../img/logo_flower.svg);
+  animation-name: logo_flower_animation;
+}
+
+@keyframes logo_flower_animation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+
+  50% {
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+  }
+
+  95% {
+    width: 50px;
+    height: 50px;
+    transform: rotate(360deg);
+    left: 5%;
+    top: 6px;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    transform: rotate(360deg);
+    left: 5%;
+    top: 6px;
+  }
+}
+
+@keyframes logo_flower_animation_b {
+  0% {
+    width: 0;
+    height: 0;
+    /* opacity: 0; */
+    /* background-size: 50% 50%; */
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+
+  50% {
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+  }
+
+  95% {
+    width: 50px;
+    height: 50px;
+    transform: rotate(360deg);
+    opacity: 0;
+    left: 5%;
+    top: 5px;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    transform: rotate(360deg);
+    opacity: 0;
+    left: 5%;
+    top: 5px;
+  }
+}
+
+@keyframes logo_flower_animation_bg {
+
+  0% {
+    opacity: 1;
+  }
+
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+/* 小花掉落 */
+.flower_animation {
+  position: absolute;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 17px);
+  height: 100vh;
+  background-color: #fff;
+  display: none;
+}
+
+.cos_f {
+  position: absolute;
+  animation-name: cos;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.flower_animation_small_flower {
+  width: 73px;
+  height: 71px;
+  position: relative;
+  background-image: url(../img/small_logo_flower.png);
+
+  animation-name: sin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.cos_f:nth-child(1) {
+  left: 5%;
+  animation-duration: 3s;
+  /* animation-delay: 1s; */
+}
+
+.cos_f:nth-child(2) {
+  left: 25%;
+  animation-duration: 5s;
+  /* animation-delay: 3s; */
+}
+
+.cos_f:nth-child(3) {
+  left: 45%;
+  animation-duration: 2s;
+  /* animation-delay: 2s; */
+}
+
+.cos_f:nth-child(4) {
+  left: 65%;
+
+  animation-duration: 3.5s;
+  /* animation-delay: 1s; */
+}
+
+.cos_f:nth-child(5) {
+  left: 85%;
+
+  animation-duration: 2.5s;
+  /* animation-delay: 3s; */
+}
+
+
+.cos_f:nth-child(1)>.flower_animation_small_flower {
+  animation-duration: 1s;
+
+}
+
+.cos_f:nth-child(2)>.flower_animation_small_flower {
+  animation-duration: 2s;
+
+}
+
+.cos_f:nth-child(3)>.flower_animation_small_flower {
+  animation-duration: 3s;
+
+}
+
+.cos_f:nth-child(4)>.flower_animation_small_flower {
+  animation-duration: 2.5s;
+}
+
+.cos_f:nth-child(5)>.flower_animation_small_flower {
+  animation-duration: 1.5s;
+
+}
+
+@keyframes cos {
+  0% {
+    top: 0%;
+  }
+
+  50% {
+    top: 50%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+/* @keyframes sin {
+  0% {
+    left: 0;
+  }
+
+  25% {
+    left: -100px;
+  }
+
+  50% {
+    left: 0;
+  }
+
+  75% {
+    left: 100px;
+  }
+
+  100% {
+    left: 0;
+  }
+} */
+@keyframes sin {
+  0% {
+    left: -100px;
+  }
+
+  100% {
+    left: 100px;
+  }
 }

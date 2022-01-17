@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --course_color: #84bae6;
+  --masterpiece_color: #4F96D8;
+  --skill_color: #357ECD;
+  --main_padding_LR: 4.6875vw;
+  font-size: 16px;
+  scrollbar-width: thin;
+}
+
+body {
+  position: relative;
+  font-family: "Noto Sans TC",
+    "Roboto",
+    sans-serif,
+    serif;
+  font-weight: 500;
+  color: #1c1c1c;
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* 以下header */
+/* ----------------------------------- */
+.top_of_page {
+  background-color: #C7F2FF;
+  text-align: center;
+}
+
+.top_of_page h1,
+.top_of_page h2 {
+  position: absolute;
+  height: 0;
+  width: 0;
+  z-index: -100;
+}
+
+.link_of_logo {
+  display: inline-block;
+}
+
+.logo_pic {
+  width: 10%;
+  min-width: 80px;
+  margin: auto;
+}
+
+.logo {
+  width: 100%;
+}
+
+.cover_logo_and_nav {
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+
+
+.other_page {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.other_page * {
+  display: inline-block;
+}
+
+.cover_line_message {
+  color: #1a388c;
+
+}
+
+.other_page a {
+  color: #1a388c;
+  font-size: 1.25rem;
+  padding: 10px 1vw;
+}
+
+.other_page a:visited {
+  color: #1a388c;
+}
+
+.other_page a:hover {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+  transition: .5s;
+}
+
+@media screen and (max-resolution: 2.8dppx) {
+  .other_page a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .hamburger {
+    width: 50px;
+    height: 40px;
+    border-radius: .25em;
+    position: fixed;
+    z-index: 11;
+    top: 15px;
+    right: 0;
+    cursor: pointer;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    --r: 100px;
+    background-color: #fff7;
+
+  }
+
+  .hamburger>div {
+    background-color: #0007;
+    border-radius: 1px;
+    height: 2px;
+    width: 30px;
+    transition: 1s;
+    transform-origin: 30px 1px;
+  }
+
+  .hamburger>.arrow {
+    transform: translate(-1px, calc(13px * var(--i))) rotate(calc(45deg*var(--i))) scaleX(0.7);
+  }
+
+
+
+  .other_page {
+    flex-direction: column;
+    background-color: #fff;
+    width: 100px;
+    line-height: 2em;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 15px;
+    right: -100px;
+    transition: 1s;
+    --r: 3px
+  }
+
+  .cover_other_page {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff0;
+    visibility: hidden;
+    transition: .5s;
+  }
+
+  .cover_other_page.appear {
+    z-index: 10;
+    visibility: visible;
+    background-color: #fffa;
+    backdrop-filter: blur(5px);
+
+  }
+
+  .gotoLeft {
+    right: var(--r);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cover_logo_and_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .nav {
+    flex-grow: 1;
+  }
+
+  .other_page {
+    margin-top: 0;
+  }
+
+  .other_page a {
+    font-size: 1.5rem;
+    padding: 10px 3vw;
+  }
+
+  .plumb_line {
+    border: 1px solid #1a388cee;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .other_page a {
+    font-size: 1.75rem;
+    padding: 10px 30px;
+  }
+}
+
+/*       以上header */
+/* ------------------------------------ */
+/*       以下footer */
+
+.cover_under_page {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.under_page {
+  background-color: #fff9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.under_page p {
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+
+.address_and_tel {
+
+  max-width: 288px;
+}
+
+.cover_address_and_icon {
+  width: 80%;
+  max-width: 288px;
+  margin: 0 auto;
+}
+
+.cover_bussines_icon {
+  max-width: 300px;
+
+}
+
+.many_bussines_icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.many_bussines_icons>a {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bussines_icon {
+  /* display: inline-block; */
+  width: 50px;
+}
+
+.bussines_icon>img {
+  width: 100%;
+}
+
+.front_of_copyright {
+  line-height: 3em;
+  text-align: center;
+}
+
+@media screen and (max-width:360px) {
+  .cover_under_page {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .cover_address_and_icon {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+  }
+
+  .cover_address_and_icon>div {
+    margin: 0 10px;
+  }
+
+  .address_and_tel {
+    flex-grow: 1;
+  }
+
+  .cover_bussines_icon {
+    flex-grow: 1;
+  }
+}
+
+/*      以上footer */
+/* ----------------------------------- */

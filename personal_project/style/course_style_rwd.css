@@ -1,0 +1,280 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+a[href="course_page.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
+.course {
+  background-color: var(--course_color);
+  padding-top: 10px;
+}
+
+
+.card {
+  background: #fff6;
+  height: calc(100% - 10px);
+  padding: 10px;
+  border-radius: .25em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pic>img {
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 0px #000c;
+  transition: .5s;
+}
+
+.pic>img:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 4px 2px #0009;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-align: justify;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course_info {
+  display: flex;
+}
+
+.course_people {
+  flex-grow: .5;
+}
+
+.course_item {
+  flex-grow: 1;
+}
+
+
+.course h2 {
+  margin-top: .5rem;
+  line-height: 2;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.course_introduce {
+  text-indent: 1.2em;
+  padding: 1em 0;
+  white-space: pre-line;
+}
+
+.not_beginner {
+  white-space: pre;
+  margin: 10px;
+}
+
+.course .for_beginner {
+  text-align: center;
+  margin: 10px;
+}
+
+.for_beginner span {
+  outline: 2px blue solid;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.course_money {
+  text-align: right;
+  font-size: 1.15em;
+  font-weight: 400;
+}
+
+.about_others * {
+  color: #1a388c;
+  vertical-align: middle;
+}
+
+/* 3D輪播 */
+.pic_3d {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 45vh;
+  margin: auto;
+  background: #fffc;
+  visibility: hidden;
+  z-index: -10;
+}
+
+.d3_position {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.out_3d {
+  width: 70%;
+  perspective-origin: center;
+  perspective: 1500px;
+}
+
+.middle_3d {
+  width: 100%;
+  /* height: 100%; */
+  transform-style: preserve-3d;
+  /* transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); */
+  transition: 1s cubic-bezier(.29, .84, .32, 1.34);
+}
+
+.inner_3d {
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 90deg)) translateZ(100px);
+  /* transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); */
+}
+
+.pic_3d button {
+  position: absolute;
+  z-index: 1;
+  top: 210px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: 800;
+  border: none;
+  border-radius: .5em;
+  background-color: #0004;
+}
+
+#pre {
+  left: 0;
+  /* margin-right: 2%; */
+}
+
+
+#next {
+  right: 0;
+  /* margin-left: 2%; */
+}
+
+.close_3d {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transform: rotate(45deg);
+  transition: 1s;
+}
+
+.close_3d:hover {
+  transform: rotate(225deg) scale(1.25);
+}
+
+.close_3d::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 24px;
+  width: 2px;
+  height: 40px;
+  background: #000;
+}
+
+.close_3d::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 5px;
+  width: 40px;
+  height: 2px;
+  background: #000;
+}
+
+
+@media screen and (min-width:768px) {
+  .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .text :not(h2) {
+    font-size: 1.25rem;
+  }
+
+  .course_info div {
+    font-size: 1rem;
+  }
+
+  .pic_3d {
+    height: 50vh;
+  }
+
+  .out_3d {
+    width: 60%;
+  }
+
+}
+
+@media screen and (min-width:992px) {
+  .pic_3d {
+    height: 100vh;
+  }
+
+  .out_3d {
+    width: 40%;
+  }
+}
+
+/* card裝飾 */
+.out_ribbon {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: -7px;
+  left: -7px;
+  overflow: hidden;
+}
+
+.ribbon {
+  position: absolute;
+  width: 100px;
+  height: 15px;
+  left: -30px;
+  top: 15px;
+  background: #f00;
+  transform: rotate(-45deg);
+}
+
+.out_ribbon::before {
+  content: "";
+  height: 0px;
+  width: 0px;
+  border-bottom: 7px solid black;
+  border-left: 7px solid #fff0;
+  position: absolute;
+  left: 47px;
+}
+
+.out_ribbon::after {
+  content: "";
+  height: 0px;
+  width: 0px;
+  border-bottom: 7px solid #000;
+  border-left: 7px solid #fff0;
+  position: absolute;
+  top: 47px;
+}
+
+/* ============================== */
+.cover_under_page {
+  background-color: var(--course_color);
+}

@@ -19,46 +19,142 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/Amos_grid.css">
-  <link rel="stylesheet" href="style/main_style.css">
-  <link rel="stylesheet" href="style/about_style.css">
+  <link rel="stylesheet" href="style/main_style_rwd.css">
+  <link rel="stylesheet" href="style/about_style_rwd.css">
 </head>
 
 <body>
   <!-- header -->
   <header class="top_of_page">
-    <a class="link_of_logo" href="front_page.html"><img class="logo" src="img/logo_小.svg" alt="染一片春天Logo"></a>
-    <h1 class="h1">染一片春天藍染教學工作室</h1>
-    <nav class="nav">
-      <h2 class="nav_h2">導覽列</h2>
-
-      <ul class="other_page">
-        <li><a href="course_page.html">課程介紹</a></li>
-        <span>|</span>
-        <li><a href="masterpiece_page.html">作品一覽</a></li>
-        <span>|</span>
-        <li><a href="skill_page.html">技法介紹</a></li>
-        <span>|</span>
-        <li><a href="about_me.html">關於我</a></li>
-      </ul>
-    </nav>
+    <div class="cover_logo_and_nav">
+      <a class="link_of_logo" href="front_page.html">
+        <div class="logo_pic">
+          <img class="logo" width="80" src="img/logo_小.svg" alt="染一片春天Logo">
+        </div>
+      </a>
+      <h1 class="h1">染一片春天藍染教學工作室</h1>
+      <nav class="nav">
+        <h2 class="nav_h2">導覽列</h2>
+        <div class="cover_other_page">
+          <ul class="other_page">
+            <li><a href="course_page.html">課程介紹</a></li>
+            <div class="plumb_line"></div>
+            <li><a href="masterpiece_page.html">作品一覽</a></li>
+            <div class="plumb_line"></div>
+            <li><a href="skill_page.html">技法介紹</a></li>
+            <div class="plumb_line"></div>
+            <li><a href="about_me.html">關於我</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="hamburger">
+      <div style="--i:1"></div>
+      <div></div>
+      <div style="--i:-1"></div>
+    </div>
   </header>
 
 
-  <div class="about_me">
-    <div class="container">
-      <div class="row row_cols_xl_2">
-        <div class="pic col_xl_2">
-          <!-- <img src="https://fakeimg.pl/100x100/#ccc"></div> -->
-          <img src="img/master_02.jpg" alt="染一片春天工作坊坊主"></div>
-        <div class="text col_xl_2">
-          <h2>染一片春天手作坊</h2>
-          <p>
-            能學到應用瀏覽次數溫度選項幻想表示台中整合皮膚，高校回到暴力網頁課程提出了研究所一台打印，靈活體驗是的命運原本短信手機鈴聲經典吸收資料，畢竟國內外還不交給這位推出在於什麼是進攻運行多個進了歷史，線路真實性，風景標誌利用騎士士兵，但在因為不代表只是，本身不。
-          </p>
+  <main>
+    <section class="about_me">
+      <h2>關於我</h2>
+
+      <div class="topper">
+        <div>
+          <div class="pic"><img src="img/master_02.jpg" alt=""></div>
+          <div>
+            <p>我給自己取個名字叫春風，在網路上使用很多年，習慣了!哈哈
+              大家不妨都叫我春風吧!</p>
+            <p>2018年4月20日，我突然失業了!晴天霹靂的這一天，是我人生極大的轉捩點。對於工作30幾年的職業婦女，一天之中變成家庭主婦，真是料想不到，甚至忿忿不平，但是又怎樣?</p>
+          </div>
+        </div>
+
+        <div>
+          <p style="text-indent: 0em;">幸好我的孩子都長大了!房屋貸款也還完了!好吧!就此提早進入退休生活吧!</p>
+          <p style="font-weight: 400;margin: 1em 0;text-indent: 0em;">於是開始嘗試以前未曾擁有的自由。</p>
+          <p>2018年5月，參加白沙屯媽祖徒步進香，雖因雙腿不適應長途跋涉而受傷，但不必請假的日子真是舒服呀!
+            同年6月跟先生到土耳其自由行21天，9月參加勞動部職能發展學會委託中華菁英協會辦理的「藍染及手工皂」職前訓練，從此進入藍染的世界……</p>
         </div>
       </div>
-    </div>
-  </div>
+
+      <hr>
+
+      <div class="content">
+        <div class="row">
+          <div class="col col_12 col_md_6">
+            <div class="pic"><img src="img/about_01.jpg" alt=""></div>
+          </div>
+          <div class="col col_12 col_md_6">
+            <div class="text">
+              <p>民國107年8月31日至11月16日
+                參加臺北市職能發展學院辦理107年度委託辦理職能培育手作商品製作班，修習藍染及手工皂343小時訓練期滿成績及格。</p>
+              <p>民國108年2月25日
+                參加108年淡水暮色展覽，配合展出藍染創作，推展藍染技藝有功。</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col_12 col_md_6">
+            <div class="pic"><img src="img/about_02.jpg" alt=""></div>
+          </div>
+          <div class="col col_12 col_md_6">
+            <div class="text">
+              <p>民國108年2月至7月
+                台北客家推廣教育中心，藍染意象山水課程，完成全期課程。</p>
+              <p>民國108年6月4日至8月14日
+                參加勞動部勞動力發展署委託辦理失業者職業訓練其他職類群:多媒材拼布縫製實務班，修習360小時訓練期滿成績合格。</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col_12 col_md_6">
+            <div class="pic"><img src="img/about_03.jpg" alt=""></div>
+          </div>
+          <div class="col col_12 col_md_6">
+            <div class="text">
+              <p>民國108年4月22日至6月24日
+                參加臺北市職能發展學院委託辦理職能進修:創意飾品編織班，修習60小時訓練期滿成績及格。</p>
+              <p>民國108年7月
+                參加HAKKA好學園，新北客家藍染(進階班)課程，時數60小時。</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col_12 col_md_6">
+            <div class="pic"><img src="img/about_04.jpg" alt=""></div>
+          </div>
+          <div class="col col_12 col_md_6">
+            <div class="text">
+              <p>民國108年8月24日至11月16日
+                參加「藍金傳奇-藍染種籽客家人才培育~客家藍茶文創計畫研習課程」，總研習時數90小時。</p>
+              <p>民國109年11月
+                參加「109年HAKKA好學園」青出於藍(文創班)課程，時數60小時。</p>
+              <p>民國111年10月
+                參加「110年HAKKA好學園」天然植物創意染(初階班)課程，時數30小時。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bottomer">
+        <div>
+          <div class="pic"><img src="img/master_03.jpg" alt=""></div>
+          <div class="text">
+            <p>目前成立「染一片春天」手作坊，以做中學為主旨，有時同學一起來切磋，教學也交朋友。
+              處於半退休狀態，休閒娛樂更多於工作，工作本身就是娛樂。</p>
+            <p>「染一片春天」以植物染為主，染好的布再後製成各種實用作品，如提袋、帽子、衣服、飾物...等。
+              歡迎有興趣的朋友，一起來染一片春天工作室，一同腦力激盪、一同創作。</p>
+          </div>
+        </div>
+        <div class="pic"><img src="img/master_04_2.jpg" alt=""></div>
+      </div>
+
+
+    </section>
+  </main>
+
 
   <!-- footer -->
   <div class="cover_under_page">
@@ -70,21 +166,39 @@
         </div>
         <div class="cover_bussines_icon">
           <p>相關連結:</p>
-          <a href="https://line.me/ti/p/CC5-CxTp8R" target="_blank"><img class="bussines_icon"
-              src="img/LINE_Brand_icon.png" alt="染一片春天的LINE"></a>
-          <a href="https://www.facebook.com/%E6%9F%93%E4%B8%80%E7%89%87%E6%98%A5%E5%A4%A9-%E6%89%8B%E4%BD%9C%E5%9D%8A-369868907123043/"
-            target="_blank"><img class="bussines_icon" src="img/facebook.png" alt="染一片春天的Facebook主頁"></a>
-          <a href="https://www.instagram.com/flower.huang.180/" target="_blank"><img class="bussines_icon"
-              src="img/instagram.png" alt="染一片春天的instagram"></a>
-          <a href="https://shopee.tw/jojoppq?smtt=0.0.9" target="_blank"><img class="bussines_icon" src="img/shopee.png"
-              alt="染一片春天的蝦皮賣場"></a>
+
+          <div class="many_bussines_icons">
+            <a href="https://line.me/ti/p/CC5-CxTp8R" target="_blank">
+              <div class="bussines_icon">
+                <img width="50" src="img/LINE_Brand_icon.png" alt="染一片春天的LINE">
+              </div>
+            </a>
+            <a href="https://www.facebook.com/%E6%9F%93%E4%B8%80%E7%89%87%E6%98%A5%E5%A4%A9-%E6%89%8B%E4%BD%9C%E5%9D%8A-369868907123043/"
+              target="_blank">
+              <div class="bussines_icon">
+                <img width="50" src="img/facebook.png" alt="染一片春天的Facebook主頁">
+              </div>
+            </a>
+            <a href="https://www.instagram.com/flower.huang.180/" target="_blank">
+              <div class="bussines_icon">
+                <img width="50" src="img/instagram.png" alt="染一片春天的instagram">
+              </div>
+            </a>
+            <a href="https://shopee.tw/jojoppq?smtt=0.0.9" target="_blank">
+              <div class="bussines_icon">
+                <img width="50" src="img/shopee.svg" alt="染一片春天的蝦皮賣場">
+              </div>
+            </a>
+          </div>
+
         </div>
       </address>
-      <p class="front_of_copyright"><small class="copyright">Copyright © 2021 Dyeing for Spring Workshop. All rights
-          reserved. 版權所有© 2021
+      <p class="front_of_copyright"><small class="copyright">版權所有© 2021
           染一片春天藍染工作室</small></p>
     </footer>
   </div>
+
+  <script src="script/main.js"> </script>
 </body>
 
 </html>

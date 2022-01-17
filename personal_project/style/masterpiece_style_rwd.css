@@ -1,0 +1,278 @@
+a[href="masterpiece_page.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
+main {
+  background-color: var(--masterpiece_color);
+}
+
+.masterpiece {
+  overflow: hidden;
+}
+
+.cover_min_pic {
+  padding: 15px 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.min_pic {
+  height: 110px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  font-size: 0;
+  border-radius: .25rem;
+  background-color: #fff7;
+}
+
+.min_pic::-webkit-scrollbar {
+  display: none;
+}
+
+.min_pic>.pic {
+  margin: 5px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+
+.pic>img {
+  width: 100%;
+}
+
+.beside_min_pics {
+  width: 90%;
+  margin: auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+  letter-spacing: 0.2em;
+  text-shadow: 1px 1px 2px #fff3;
+}
+
+.card>.pic {
+  width: 100%;
+}
+
+.text>h2 {
+  font-size: 2rem;
+  line-height: 2em;
+  text-align: center;
+}
+
+.text>p {
+  font-weight: 400;
+  line-height: 1.75em;
+  text-indent: 1.2em;
+  text-align: justify;
+  white-space: pre-line;
+  margin-bottom: 1em;
+}
+
+.cover_you_know {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.you_know {
+  padding: 1em;
+  width: 100%;
+  background-color: #fffa;
+  border-radius: .5em;
+  position: relative;
+  line-height: 2em;
+}
+
+
+.you_know h3::before {
+  content: "";
+  display: inline-block;
+  height: 30px;
+  width: 31px;
+  margin-right: 5px;
+  background-image: url(../img/small_logo_flower.png);
+  background-size: cover;
+  vertical-align: middle;
+}
+
+.you_know p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.link_to_other {
+  display: flex;
+  justify-content: space-around;
+}
+
+.you_know a {
+  display: inline-block;
+  color: #1a388c;
+}
+
+.you_know a:visited {
+  color: #1a388c;
+}
+
+
+@media screen and (min-width:768px) {
+  .cover_min_pic {
+    padding: 20px 0;
+  }
+
+  .min_pic {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 220px;
+  }
+
+  .beside_min_pics {
+    padding-top: 15px;
+  }
+
+  .card {
+    display: flex;
+    justify-content: space-between;
+    /*     padding: 15px 0; */
+  }
+
+  .card .pic {
+    width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .card .text {
+    width: 45%;
+    flex-shrink: 0;
+  }
+}
+
+.cover_under_page {
+  background-color: var(--masterpiece_color);
+}
+
+@media screen and (min-width:1200px) {
+  .masterpiece {
+    display: flex;
+    width: 80%;
+    min-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cover_min_pic {
+    width: 360px;
+    flex-shrink: 0;
+  }
+
+  .min_pic {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 90vh;
+  }
+
+  .min_pic>.pic {
+    margin: 10px;
+  }
+
+
+  .beside_min_pics {
+    padding-top: 20px;
+  }
+
+  .card {
+    margin-left: auto;
+    width: 95%;
+  }
+
+  .cover_you_know {
+    margin-left: auto;
+    width: 95%;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (min-height:1040px) {
+  .masterpiece {
+    height: 80vh;
+  }
+}
+
+/* ============================= */
+/* 卡片滑入動畫 */
+.show {
+  position: absolute;
+  opacity: 1;
+  transition: 1s;
+}
+
+.hidden {
+  position: relative;
+  opacity: 0;
+  transition: 1s;
+}
+
+
+.pic.show {
+  left: 0;
+  animation-name: picshow;
+  animation-duration: 1s;
+}
+
+.text.show {
+  right: 0;
+  animation-name: textshow;
+  animation-duration: 1s;
+}
+
+.you_know.show {
+  top: 0;
+  animation-name: youknowshow;
+  animation-duration: 1s;
+}
+
+
+@keyframes picshow {
+  0% {
+    opacity: 0;
+    left: -500px;
+  }
+
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes textshow {
+  0% {
+    opacity: 0;
+    right: -500px;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes youknowshow {
+  0% {
+    opacity: 0;
+    top: 300px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

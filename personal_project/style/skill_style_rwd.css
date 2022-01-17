@@ -1,0 +1,177 @@
+body {
+  font-size: 1.5rem;
+}
+
+a[href="skill_page.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
+h1,
+header h2 {
+  opacity: 0;
+}
+
+main {
+  background-color: #357ECDe5;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px #fff3;
+}
+
+.skill {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.skill_name {
+  text-align: center;
+  line-height: 3em;
+  letter-spacing: 0.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+aside {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+aside ul {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff9;
+}
+
+aside li {
+  cursor: pointer;
+}
+
+aside li:hover {
+  animation: jump 0.5s infinite;
+
+  /* transform: translateY(20px); */
+}
+
+.container.none {
+  display: none;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+
+  }
+
+  100% {
+    transform: translateY(0px);
+
+  }
+}
+
+@media screen and (min-width:768px) {
+  .skill_name {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  aside ul {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================== */
+.cover_under_page {
+  background-color: #357ECDe5;
+}
+
+/* FHD寬螢幕背景裝飾 */
+@media screen and (min-width:1600px) {
+  .cover_background_flower {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    top: 200px;
+    left: 0.3%;
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(even) {
+    top: calc(200px + 1 * 500px);
+    left: 80%;
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(3) {
+    top: calc(200px + 2 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(4) {
+    top: calc(200px + 3 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(5) {
+    top: calc(200px + 4 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(6) {
+    top: calc(200px + 5 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(7) {
+    top: calc(200px + 6 * 500px);
+  }
+
+  .a_lot_of_flower>.cover_background_flower:nth-of-type(8) {
+    top: calc(200px + 7 * 500px);
+  }
+
+  .background_flower {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    /* top: 20px; */
+    /* right: 0; */
+    background-image: radial-gradient(#Fff2 10%, #0000 20%),
+      radial-gradient(ellipse 40% 80%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 80% 40%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 40% 80%, #fff4 20%, #0000 20%),
+      radial-gradient(ellipse 80% 40%, #fff4 20%, #0000 20%);
+    /*     background-size: 200px 200px; */
+    background-position: 0 0,
+      0 calc(15vw * 0.30),
+      calc(15vw * 0.30) 0,
+      0 calc(-15vw * 0.30),
+      calc(-15vw * 0.30) 0;
+    background-repeat: no-repeat;
+  }
+
+  .bgf2 {
+    transform: rotate(45deg);
+  }
+}

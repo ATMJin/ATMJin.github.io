@@ -1,0 +1,138 @@
+a[href="about_me.html"] {
+  border-radius: 0.25em;
+  background-color: #1a388c30;
+}
+
+main {
+  background-color: #C7F2FF;
+}
+
+.about_me {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.about_me>h2 {
+  visibility: hidden;
+}
+
+.pic>img {
+  width: 100%;
+}
+
+.about_me p {
+  font-size: 1rem;
+  font-weight: 300;
+  white-space: pre-line;
+  text-indent: 1.2em;
+  line-height: 1.75;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.row+.row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bottomer {
+  padding-bottom: 40px;
+}
+
+.bottomer .text {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width:768px) {
+  .about_me p {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+  }
+
+  .topper>div:first-child {
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-bottom: 40px;
+  }
+
+  .topper>div:first-child .pic {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .row {
+    margin-left: -20px;
+    margin-right: -20px;
+    position: relative;
+  }
+
+  .row+.row {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  [class*="col_"] {
+    padding: 1px 20px;
+  }
+
+  .row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .row::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    background: #0003;
+  }
+
+  .row:first-child:before {
+    height: calc(100% + 40px);
+  }
+
+  .row:last-child:before {
+    height: calc(100% - 80px);
+  }
+
+  .row::after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00f6;
+  }
+
+  .bottomer>div:first-child {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .bottomer>div:first-child .pic {
+    margin-right: 20px;
+    flex-shrink: .7;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .about_me p {
+    font-size: 1.5rem;
+  }
+
+
+}
+
+/* ======================== */
+.cover_under_page {
+  background-color: #C7F2FF;
+}
