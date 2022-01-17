@@ -160,6 +160,12 @@ main {
   background-color: var(--masterpiece_color);
 }
 
+@media screen and (max-resolution: 2.8dppx) {
+  .link_to_other {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (min-width:1200px) {
   .masterpiece {
     display: flex;
