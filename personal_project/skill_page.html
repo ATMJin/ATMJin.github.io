@@ -151,7 +151,7 @@
       </div>
 
     </section>
-
+    <div class="bottom_arrow"><i class="bi bi-chevron-compact-down"></i></div>
     <!-- FIXME overflow -->
     <!-- 背景裝飾 -->
     <div class="a_lot_of_flower">
@@ -236,9 +236,24 @@
   </div>
 
   <script src="script/main.js"> </script>
-  <!-- FIXME 修改偷懶寫法  -->
   <script>
+    // 下拉顯示
+    function scrollToShow(e) {
+      for (let i = 0; i < $All(".row").length; i++) {
+        if ($All(".row")[i].offsetTop < (window.scrollY + 400)) {
+          $All(".row")[i].style.opacity = "1";
+        }
+      }
+    }
     window.addEventListener("load", function () {
+
+      scrollToShow();
+      window.addEventListener("scroll", function (e) {
+        scrollToShow();
+      }, false)
+
+
+      // <!-- FIXME 修改偷懶寫法  -->
       AA.addEventListener("click", function () {
         $(".a").style.display = "block";
         $(".skill_name").innerText = "蠟染"
