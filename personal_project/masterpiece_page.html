@@ -209,6 +209,22 @@
 
   <script src="script/main.js"> </script>
   <script src="script/masterpiece_script.js"></script>
+
+  <!-- 雪花掉落 -->
+  <script src="script/snowFall.js"></script>
+  <script>
+    snowFall.snow(document.getElementsByTagName("body"), {
+      flakeCount: 10,
+      flakeColor: "#fff7",
+      flakeIndex: 0,
+      // flakePosition,
+      // minSize,
+      maxSize: 10,
+      // minSpeed,
+      maxSpeed: 1,
+      round: true,
+    });
+  </script>
 </body>
 
 </html>
