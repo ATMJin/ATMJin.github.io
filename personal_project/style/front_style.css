@@ -688,7 +688,7 @@ p {
   background-color: #fff;
   animation: logo_flower_animation_bg .5s linear;
   animation-delay: 5s;
-  display: none;
+  /* display: none; */
 }
 
 .logo_flower_animation div {
