@@ -32,7 +32,7 @@ function X_or_Y() {
   }
 }
 //TODO 記得反註解
-// X_or_Y();
+X_or_Y();
 
 //讀取json資料
 let masterpiece_url = "data/masterpiece.json";
