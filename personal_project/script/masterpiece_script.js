@@ -102,6 +102,7 @@ function change_card(e) {
 let img = document.querySelectorAll(".min_pic .pic>img")
 
 function init() {
+  X_or_Y();
   //滑鼠或觸控時停止或開啟輪播
   min_pics.addEventListener("mousedown", () => clearInterval(XY), false);
   min_pics.addEventListener("touchstart", () => clearInterval(XY), false);
