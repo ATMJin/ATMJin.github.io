@@ -12,6 +12,7 @@
   <h1 id="latlon"></h1>
   <h1 id="cityname"></h1>
   <h1 id="cityweather"></h1>
+  <h1 id="citypop"></h1>
 
   <script>
     function getWeather() {
@@ -43,11 +44,33 @@
         // console.log(loc);
         // console.log(city.indexOf(loc));
 
-
         cityweather.innerHTML = `${loc}目前氣溫為${temp[city.indexOf(loc)]}度，天氣${weather[city.indexOf(loc)]}`;
       }
     }
 
+    function weatherFocus() {
+      let
+        CWB_url =
+        "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-4FF1951B-FC22-48C6-96C4-DDAC0FE29DF9&elementName=PoP";
+      var request = new XMLHttpRequest();
+      request.open('GET', CWB_url);
+      request.responseType = 'json';
+      request.send();
+
+      let CWBdata;
+      let locationName = new Array;
+      let PoP = new Array;
+      request.onload = function () {
+        CWBdata = request.response
+        console.log("request.onload");
+        for (const i in CWBdata.records.location) {
+          locationName.push(CWBdata.records.location[i].locationName);
+          PoP.push(CWBdata.records.location[i].weatherElement[0].time[0].parameter.parameterName);
+        }
+
+        citypop.innerHTML = `未來12小時降雨機率為${PoP[locationName.indexOf(loc)]}%`;
+      }
+    }
 
     let lat = 0;
     let lon = 0;
@@ -64,7 +87,7 @@
     function showLatLon(position) {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      latlon.innerHTML = `您目前所在的經度為:東經${lon}度、緯度為:北緯${lat}`;
+      latlon.innerHTML = `您目前所在的經度為:東經${lon}度、緯度為:北緯${lat}度`;
       getCity();
     }
 
@@ -82,9 +105,10 @@
         loc = doc.getElementsByTagName("ctyName")[0].textContent;
         cityname.innerHTML = `您目前所在的都市為:${loc}`;
         if (loc == "新竹市") loc = "新竹縣";
-
+        if (loc == "嘉義市") loc = "嘉義縣";
 
         getWeather();
+        weatherFocus();
       }
     }
 
