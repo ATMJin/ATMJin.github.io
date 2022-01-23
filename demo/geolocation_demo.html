@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1 id="latlon"></h1>
+  <h1 id="city"></h1>
+
+  <script>
+    let lat = 0;
+    let lon = 0;
+
+    function getLatLon() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showLatLon);
+      } else {
+        latlon.innerHTML = "抱歉！瀏覽器不支援Geolocation";
+      }
+    }
+
+    function showLatLon(position) {
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      latlon.innerHTML = `您目前所在的經度為:東經${lon}度、緯度為:北緯${lat}`;
+      getCity();
+    }
+
+    function getCity() {
+      let cityurl = `https://api.nlsc.gov.tw/other/TownVillagePointQuery/${lon}/${lat}`;
+      let request = new XMLHttpRequest();
+      request.open('GET', cityurl);
+      request.responseType = 'document';
+      request.send();
+
+      document.getElementsByTagName
+      let doc;
+      request.onload = function () {
+        doc = request.response
+        city.innerHTML = `您目前所在的都市為:${doc.getElementsByTagName("ctyName")[0].textContent}`;
+      }
+    }
+
+
+
+
+    window.onload = function () {
+      getLatLon();
+    }
+  </script>
+</body>
+
+</html>
