@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+</head>
+
+<body>
+  <h1 id="latlon"></h1>
+  <h1 id="cityname"></h1>
+  <h1 id="cityweather"></h1>
+
+  <script>
+    function getWeather() {
+      let
+        CWB_url =
+        "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-4FF1951B-FC22-48C6-96C4-DDAC0FE29DF9&locationName=%E6%9D%BF%E6%A9%8B,%E8%87%BA%E5%8C%97,%E5%9F%BA%E9%9A%86,%E6%96%B0%E5%B1%8B,%E6%96%B0%E7%AB%B9,%E5%9C%8B%E4%B8%80S152K,%E8%87%BA%E4%B8%AD,%E7%94%B0%E4%B8%AD,%E6%97%A5%E6%9C%88%E6%BD%AD,%E5%8F%A4%E5%9D%91,%E5%98%89%E7%BE%A9,%E5%8D%97%E5%8D%80%E4%B8%AD%E5%BF%83,%E9%AB%98%E9%9B%84,%E6%81%86%E6%98%A5,%E5%AE%9C%E8%98%AD,%E8%8A%B1%E8%93%AE,%E8%87%BA%E6%9D%B1,%E6%BE%8E%E6%B9%96,%E9%87%91%E9%96%80,%E9%A6%AC%E7%A5%96&elementName=TEMP,Weather&parameterName=CITY";
+      var request = new XMLHttpRequest();
+      request.open('GET', CWB_url);
+      request.responseType = 'json';
+      request.send();
+
+      let CWBdata;
+      let temp = new Array;
+      let weather = new Array;
+      let city = new Array;
+      request.onload = function () {
+        CWBdata = request.response
+        console.log("request.onload");
+        for (const i in CWBdata.records.location) {
+          // console.log(CWBdata.records.location[i].locationName);
+          // console.log(tt.records.location[i].parameter[0].parameterValue);
+          temp.push(CWBdata.records.location[i].weatherElement[0].elementValue);
+          weather.push(CWBdata.records.location[i].weatherElement[1].elementValue);
+          city.push(CWBdata.records.location[i].parameter[0].parameterValue)
+        }
+        // console.log(temp);
+        // console.log(weather);
+        // console.log(city);
+        // console.log(loc);
+        // console.log(city.indexOf(loc));
+
+
+        cityweather.innerHTML = `${loc}目前氣溫為${temp[city.indexOf(loc)]}度，天氣${weather[city.indexOf(loc)]}`;
+      }
+    }
+
+
+    let lat = 0;
+    let lon = 0;
+    let loc = "";
+
+    function getLatLon() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showLatLon);
+      } else {
+        latlon.innerHTML = "抱歉！瀏覽器不支援Geolocation";
+      }
+    }
+
+    function showLatLon(position) {
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      latlon.innerHTML = `您目前所在的經度為:東經${lon}度、緯度為:北緯${lat}`;
+      getCity();
+    }
+
+    function getCity() {
+      let cityurl = `https://api.nlsc.gov.tw/other/TownVillagePointQuery/${lon}/${lat}`;
+      let request = new XMLHttpRequest();
+      request.open('GET', cityurl);
+      request.responseType = 'document';
+      request.send();
+
+      document.getElementsByTagName
+      let doc;
+      request.onload = function () {
+        doc = request.response;
+        loc = doc.getElementsByTagName("ctyName")[0].textContent;
+        cityname.innerHTML = `您目前所在的都市為:${loc}`;
+        if (loc == "新竹市") loc = "新竹縣";
+
+
+        getWeather();
+      }
+    }
+
+    window.onload = function () {
+      getLatLon();
+    }
+  </script>
+</body>
+
+</html>
