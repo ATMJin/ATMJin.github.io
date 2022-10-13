@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>IDOLYPRIDE曬卡小工具</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Vue框架 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./script.js" async></script>
+  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" async></script> -->
+  <script src="dom-to-image.js" async></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&family=Noto+Sans+TC:wght@100;300;400;500;700&family=Noto+Sans:wght@100;300;400;500;700&display=swap');
+  </style>
+
+
+</head>
+
+<body id="app">
+  <div id="capture">
+    <div id="titleSection">
+      <a href="https://idolypride.jp/" target="_blank">
+        <img id='logo' src="Logo.png" alt="Idoly Pride">
+      </a>
+
+      <p id="title">曬卡小工具</p>
+    </div>
+    <div id="filterSection">
+      <p id="filterTitle">篩選器</p>
+      <form action="" id="filter">
+        <div>
+          <input type="checkbox" id="normal" class='pools' @click='filter' checked>
+          <label for="normal" class="pool">
+            常駐池
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" id="limited" class='pools' @click='filter' checked>
+          <label for="limited" class="pool">
+            限定池
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" id="fes" class='pools' @click='filter' checked>
+          <label for="fes" class="pool">
+            Fes池
+          </label>
+        </div>
+        <div>
+          <input type="checkbox" id="special" class='pools' @click='filter' checked>
+          <label for="special" class="pool">
+            Special
+          </label>
+        </div>
+      </form>
+    </div>
+    <div id="idolSection">
+      <div v-for="(idol, index) in idols" :key="index">
+        <input type="checkbox" :id="idol" class="avatar" @click="filter" checked>
+        <label :for="idol" class="idols">
+          <img class="idol" :id="idol" :src="'avatar/'+idol+'.png'" alt="">
+        </label>
+      </div>
+    </div>
+    <div id="cardSelectSection">
+      <div v-for="(cardPath, index) in cardPaths" :key="index">
+        <input type="checkbox" :id="cardPath.tags[0] + cardPath.tags[1]"
+          :class="'cards ' + cardPath.tags[0] + ' ' + cardPath.tags[2]" @click='check' unchecked>
+        <label :for="cardPath.tags[0] + cardPath.tags[1]" :class="'img ' + cardPath.tags[0] + ' ' + cardPath.tags[2]">
+          <img :id="cardPath.tags[0] + cardPath.tags[1]" :src="'cards/' + cardPath.path" alt="">
+        </label>
+      </div>
+    </div>
+    <div id="resultSection">
+      <div class="results">
+        <p class="result" id='totalcards'>{{cardsIHave}}</p>
+        <p class="result" id='normalcards'>{{normalCardsIhave}}</p>
+        <p class="result" id='limitedcards'>{{limitedCardsIhave}}</p>
+        <p class="result" id='fescards'>{{fesCardsIhave}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="export">
+    <button id="showMyCard" @click="exportImage">{{exportButtonText}}</button>
+  </div>
+  <p id="exportExplaination">製作完成的圖片會新增在下方</p>
+  <div id='uesrCards'></div>
+
+
+
+</body>
+
+</html>
