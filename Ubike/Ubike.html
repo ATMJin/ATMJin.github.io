@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubike</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <style>
+    .inline-block {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="inline-block" v-for="(site, index) in sites" :key="index">
+      <h1>站點: {{site.sna}}</H1>
+      <h2>更新時間: {{site.updateTime}}</h2>
+      <h2>剩餘車輛: {{site.sbi}}</h2>
+    </div>
+  </div>
+
+  <script>
+    class SiteObj {
+      constructor(siteObj) {
+        this.sno = siteObj.sno;
+        this.sna = siteObj.sna;
+        this.tot = siteObj.tot;
+        this.sbi = siteObj.sbi;
+        this.sarea = siteObj.sarea;
+        this.mday = siteObj.mday;
+        this.lat = siteObj.lat;
+        this.lng = siteObj.lng;
+        this.ar = siteObj.ar;
+        this.sareaen = siteObj.sareaen;
+        this.snaen = siteObj.snaen;
+        this.aren = siteObj.aren;
+        this.bemp = siteObj.bemp;
+        this.act = siteObj.act;
+        this.srcUpdateTime = siteObj.srcUpdateTime;
+        this.updateTime = siteObj.updateTime;
+        this.infoTime = siteObj.infoTime;
+        this.infoDate = siteObj.infoDate;
+      }
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          sites: [],
+        };
+      },
+      mounted() {
+        this.getUbikeData();
+        setInterval(() => {
+          this.getUbikeData();
+        }, 120000);
+      },
+      methods: {
+        async getUbikeData() {
+          const vm = this;
+          const url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json';
+          const snoArry = ["500108083", "500108116"];
+
+          try {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            const arryData = [...jsonData];
+            const filterData = arryData.filter(item => snoArry.includes(item.sno));
+            let tmpSites = [];
+            filterData.forEach(item => {
+              const siteObj = new SiteObj(item);
+              if (siteObj.sno === "500108083") siteObj.sna = "瑞光港墘路口(公司對面)";
+              if (siteObj.sno === "500108116") siteObj.sna = "宏匯瑞光廣場(瑞光路)(全家對面)";
+              tmpSites.push(siteObj);
+            });
+            vm.sites = tmpSites;
+          } catch (error) {
+            console.error('Fetch Error :-S', error);
+          }
+        }
+      }
+    });
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
